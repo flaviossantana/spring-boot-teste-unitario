@@ -49,13 +49,13 @@ class CalculadoraProbabilidadeAdocaoTest {
 
     @Test
     @DisplayName("Testa Probabilidade de Adoção de Cachorro velho com pouco peso")
-    void deveriaCalcularProbabilidadeAdocaoCachorroMedia() {
+    void deveriaCalcularProbabilidadeAdocaoCachorroBaixa() {
 
         Pet pet = arrangePet(TipoPet.CACHORRO,16, 16.0f);
 
         ProbabilidadeAdocao probabilidade = actCalculateProbability(pet);
 
-        assertEquals(ProbabilidadeAdocao.MEDIA, probabilidade);
+        assertEquals(ProbabilidadeAdocao.BAIXA, probabilidade);
     }
 
     private static ProbabilidadeAdocao actCalculateProbability(Pet pet) {
