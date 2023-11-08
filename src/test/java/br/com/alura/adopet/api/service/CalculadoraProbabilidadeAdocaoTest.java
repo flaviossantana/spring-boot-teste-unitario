@@ -6,6 +6,7 @@ import br.com.alura.adopet.api.model.Abrigo;
 import br.com.alura.adopet.api.model.Pet;
 import br.com.alura.adopet.api.model.ProbabilidadeAdocao;
 import br.com.alura.adopet.api.model.TipoPet;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculadoraProbabilidadeAdocaoTest {
 
     @Test
+    @DisplayName("Testa Probabilidade de Adoção de Gato novo com pouco peso")
     void deveriaCalcularProbabilidadeAdocaoGatoAlta() {
 
 
@@ -39,6 +41,7 @@ class CalculadoraProbabilidadeAdocaoTest {
     }
 
     @Test
+    @DisplayName("Testa Probabilidade de Adoção de Gato velho com pouco peso")
     void deveriaCalcularProbabilidadeAdocaoGatoMedia() {
 
 
@@ -64,6 +67,7 @@ class CalculadoraProbabilidadeAdocaoTest {
     }
 
     @Test
+    @DisplayName("Testa Probabilidade de Adoção de Gato velho com muito peso")
     void deveriaCalcularProbabilidadeAdocaoGatoBaixa() {
 
 
