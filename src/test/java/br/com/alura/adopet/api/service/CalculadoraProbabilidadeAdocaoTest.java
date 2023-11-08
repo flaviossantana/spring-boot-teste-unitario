@@ -52,7 +52,7 @@ class CalculadoraProbabilidadeAdocaoTest {
                 TipoPet.GATO,
                 "Miau",
                 "Siames",
-                11,
+                15,
                 "Cinza",
                 4.0f
         ), abrigo);
@@ -77,14 +77,14 @@ class CalculadoraProbabilidadeAdocaoTest {
                 TipoPet.GATO,
                 "Miau",
                 "Siames",
-                11,
+                14,
                 "Cinza",
-                4.0f
+                11.0f
         ), abrigo);
 
         CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
         ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
 
-        assertEquals(ProbabilidadeAdocao.MEDIA, probabilidade);
+        assertEquals(ProbabilidadeAdocao.BAIXA, probabilidade);
     }
 }
