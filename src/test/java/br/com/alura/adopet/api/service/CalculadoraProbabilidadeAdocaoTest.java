@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculadoraProbabilidadeAdocaoTest {
 
     @Test
-    void deveriaCalcularProbabilidadeAdocaoAlta() {
+    void deveriaCalcularProbabilidadeAdocaoGatoAlta() {
 
 
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
@@ -39,7 +39,7 @@ class CalculadoraProbabilidadeAdocaoTest {
     }
 
     @Test
-    void deveriaCalcularProbabilidadeAdocaoMedia() {
+    void deveriaCalcularProbabilidadeAdocaoGatoMedia() {
 
 
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
@@ -64,7 +64,7 @@ class CalculadoraProbabilidadeAdocaoTest {
     }
 
     @Test
-    void deveriaCalcularProbabilidadeAdocaoBaixa() {
+    void deveriaCalcularProbabilidadeAdocaoGatoBaixa() {
 
 
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
