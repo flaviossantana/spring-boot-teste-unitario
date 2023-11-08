@@ -19,6 +19,20 @@ class CalculadoraProbabilidadeAdocaoTest {
     void deveriaCalcularProbabilidadeAdocaoGatoAlta() {
 
 
+        Pet pet = arrangePet(4, 4.0f);
+
+        ProbabilidadeAdocao probabilidade = actCalculateProbability(pet);
+
+        assertEquals(ProbabilidadeAdocao.ALTA, probabilidade);
+    }
+
+    private static ProbabilidadeAdocao actCalculateProbability(Pet pet) {
+        CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
+        ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
+        return probabilidade;
+    }
+
+    private static Pet arrangePet(int idade, float peso) {
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
                 "Abrigo feliz",
                 "94999999999",
@@ -29,15 +43,11 @@ class CalculadoraProbabilidadeAdocaoTest {
                 TipoPet.GATO,
                 "Miau",
                 "Siames",
-                4,
+                idade,
                 "Cinza",
-                4.0f
+                peso
         ), abrigo);
-
-        CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
-        ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
-
-        assertEquals(ProbabilidadeAdocao.ALTA, probabilidade);
+        return pet;
     }
 
     @Test
@@ -45,23 +55,9 @@ class CalculadoraProbabilidadeAdocaoTest {
     void deveriaCalcularProbabilidadeAdocaoGatoMedia() {
 
 
-        Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
-                "Abrigo feliz",
-                "94999999999",
-                "abrigofeliz@email.com.br"
-        ));
+        Pet pet = arrangePet(15, 4.0f);
 
-        Pet pet = new Pet(new CadastroPetDto(
-                TipoPet.GATO,
-                "Miau",
-                "Siames",
-                15,
-                "Cinza",
-                4.0f
-        ), abrigo);
-
-        CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
-        ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
+        ProbabilidadeAdocao probabilidade = actCalculateProbability(pet);
 
         assertEquals(ProbabilidadeAdocao.MEDIA, probabilidade);
     }
@@ -71,23 +67,9 @@ class CalculadoraProbabilidadeAdocaoTest {
     void deveriaCalcularProbabilidadeAdocaoGatoBaixa() {
 
 
-        Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
-                "Abrigo feliz",
-                "94999999999",
-                "abrigofeliz@email.com.br"
-        ));
+        Pet pet = arrangePet(14, 11.0f);
 
-        Pet pet = new Pet(new CadastroPetDto(
-                TipoPet.GATO,
-                "Miau",
-                "Siames",
-                14,
-                "Cinza",
-                11.0f
-        ), abrigo);
-
-        CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
-        ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
+        ProbabilidadeAdocao probabilidade = actCalculateProbability(pet);
 
         assertEquals(ProbabilidadeAdocao.BAIXA, probabilidade);
     }
